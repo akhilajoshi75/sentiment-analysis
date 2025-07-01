@@ -1,0 +1,8 @@
+praw
+nltk
+tensorflow
+scikit-learn
+joblib
+pandas
+plotly
+dash

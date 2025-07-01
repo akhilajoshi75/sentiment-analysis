@@ -1,0 +1,20 @@
+# docker-compose.yml
+version: "3.8"
+
+services:
+  sentiment_api:
+    build:
+      context: ./sentiment_lstm
+    ports:
+      - "5000:5000"
+    restart: always
+
+  dashboard_app:
+    build:
+      context: .
+      dockerfile: Dockerfile.dashboard
+    ports:
+      - "8050:8050"
+    depends_on:
+      - sentiment_api
+    restart: always
