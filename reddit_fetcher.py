@@ -14,7 +14,7 @@ reddit = praw.Reddit(
 
 def get_sentiment_from_api(text):
     try:
-        response = requests.post("http://sentiment_api:5000/predict", json={"text": text})
+        response = requests.post("https://sentiment-api-production.up.railway.app/predict", json={"text": text})
         if response.status_code == 200:
             return response.json().get("sentiment", "neutral")
         else:
