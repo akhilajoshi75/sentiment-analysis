@@ -5,7 +5,7 @@ FROM python:3.10-slim
 WORKDIR /app
 
 # Copy all project files
-COPY . /sentiment_lstm/app
+COPY . .
 
 # Install dependencies
 RUN pip install --no-cache-dir -r requirements.txt
