@@ -61,7 +61,7 @@ def update_sentiment_graph(n_clicks, keyword):
     return fig, alert_msg, f"Analyzed {len(posts_df)} recent posts."
 
 if __name__ == '__main__':
-    port = int(os.environ.get("PORT", 8050))
+    port = int(os.environ.get("PORT", 8080))
     app.run(debug=False, host='0.0.0.0', port=port)
 
 
