@@ -4,6 +4,7 @@ import pandas as pd
 import plotly.express as px
 from reddit_fetcher import fetch_reddit_posts
 import datetime
+import os
 
 # Initialize app
 app = dash.Dash(__name__)
@@ -60,6 +61,7 @@ def update_sentiment_graph(n_clicks, keyword):
     return fig, alert_msg, f"Analyzed {len(posts_df)} recent posts."
 
 if __name__ == '__main__':
-    app.run(debug=True, host='0.0.0.0', port=8050)
+    port = int(os.environ.get("PORT", 8050))
+    app.run(debug=False, host='0.0.0.0', port=port)
 
 
